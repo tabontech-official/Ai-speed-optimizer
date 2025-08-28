@@ -9,33 +9,27 @@ export async function sendToGoogleInsights(url) {
   try {
     const response = await fetch(insightsUrl);
     const data = await response.json();
-
     await savePerformanceReport(formattedUrl, data);
     return data;
   } catch (error) {
-    console.error("Error fetching Google Insights data:", error);
+    console.error("Error fetching Google Insights data: ", error);
     throw new Error("Failed to fetch Google Insights data");
   }
 }
 
 async function savePerformanceReport(storeUrl, reportData) {
   try {
-    const existingReport = await db.optimizedReport.findUnique({
-      where: { storeUrl },
-    });
+    const existingReport = await db.currentReport.findUnique({ where: { storeUrl } });
 
     if (existingReport) {
-      return await db.optimizedReport.update({
-        where: { storeUrl },
-        data: { report: JSON.stringify(reportData) },
-      });
+      return existingReport;
     }
 
-    return await db.optimizedReport.create({
+    return db.currentReport.create({
       data: { storeUrl, report: JSON.stringify(reportData) },
     });
   } catch (error) {
-    console.error("Error saving OptimizedReport:", error);
-    throw new Error("Failed to save OptimizedReport");
+    console.error("Error saving CurrentReport: ", error);
+    throw new Error("Failed to save CurrentReport");
   }
 }

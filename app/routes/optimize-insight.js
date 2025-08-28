@@ -52,7 +52,6 @@
 import { json } from "@remix-run/node";
 import { sendToGoogleInsights } from "../utils/insight";
 
-// loader ya action ke through server-side pe call karna
 export async function action({ request }) {
   const formData = await request.formData();
   const url = formData.get("url");
