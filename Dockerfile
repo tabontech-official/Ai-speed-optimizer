@@ -10,7 +10,6 @@ WORKDIR /app
 # Set environment variables
 ENV NODE_ENV=production
 ENV PORT=3000
-ENV HOST=0.0.0.0  
 
 # Copy only package files first (better layer caching)
 COPY package.json package-lock.json* ./
