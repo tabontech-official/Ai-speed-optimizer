@@ -10,13 +10,13 @@ WORKDIR /app
 # Set environment variables
 ENV NODE_ENV=production
 ENV PORT=3000
+ENV HOST=0.0.0.0  # Ensure app listens on all interfaces
 
 # Copy only package files first (better layer caching)
 COPY package.json package-lock.json* ./
 
 # Install production dependencies with legacy-peer-deps to fix React conflicts
-RUN npm install --omit=dev --legacy-peer-deps && npm cache clean --force
-
+RUN npm install --legacy-peer-deps && npm cache clean --force
 # Remove Shopify CLI (not needed in production)
 RUN npm remove @shopify/cli || true
 
