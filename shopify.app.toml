@@ -2,7 +2,7 @@
 
 client_id = "42e7052e2a04212ea5abc3e74d18ccaf"
 name = "AI - Page Speed Optimizer"
-application_url = "hhttps://page-fold-optimize.fly.dev"
+application_url = "https://page-fold-optimize.fly.dev"
 embedded = true
 handle = "ai-speed-optimizer-01"
 
