@@ -5,7 +5,6 @@ import db from "../db.server";
 export async function sendToGoogleInsights(url) {
   const apiKey = "AIzaSyCuw6GhC1CiImN8VlI94Ndcsoz0UmFZBZw";
 
-  // Ensure the URL starts with "https://"
   const formattedUrl = url.startsWith("https://") ? url : `https://${url}`;
 
   const insightsUrl = `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${formattedUrl}&key=${apiKey}`;

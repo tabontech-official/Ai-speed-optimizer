@@ -1,6 +1,5 @@
 import { json } from "@remix-run/node";
-import db from "../db.server";
-
+import db from '../db.server'
 export async function sendToGoogleInsights(url) {
   const apiKey = "AIzaSyCuw6GhC1CiImN8VlI94Ndcsoz0UmFZBZw";
 
@@ -36,7 +35,6 @@ async function savePerformanceReport(storeUrl, reportData) {
           report: JSON.stringify(reportData),
         },
       });
-      // console.log("Updated existing report:", updatedReport);
       return updatedReport;
     }
     const result = await db.optimizedReport.create({
