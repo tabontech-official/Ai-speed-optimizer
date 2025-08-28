@@ -12,7 +12,7 @@ COPY package.json package-lock.json* ./
 RUN npm install --legacy-peer-deps && npm cache clean --force
 # Remove CLI packages since we don't need them in production by default.
 # Remove this line if you want to run CLI commands in your container.
-RUN npm remove @shopify/cli
+RUN npm remove @shopify/cli --legacy-peer-deps || true
 
 COPY . .
 
