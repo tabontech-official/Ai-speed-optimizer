@@ -2,7 +2,7 @@
 
 client_id = "42e7052e2a04212ea5abc3e74d18ccaf"
 name = "AI - Page Speed Optimizer"
-application_url = "https://page-fold-optimize.fly.dev"
+application_url = "https://page-fold-optimize.fly.dev/"
 embedded = true
 handle = "ai-speed-optimizer-01"
 
@@ -26,11 +26,7 @@ api_version = "2025-07"
 scopes = "read_themes,write_themes"
 
 [auth]
-redirect_urls = [
-  "https://page-fold-optimize.fly.dev/auth/callback",
-  "https://page-fold-optimize.fly.dev/auth/shopify/callback",
-  "https://page-fold-optimize.fly.dev/api/auth/callback"
-]
+redirect_urls = ["https://page-fold-optimize.fly.dev/auth/callback"]
 
 [pos]
 embedded = false
