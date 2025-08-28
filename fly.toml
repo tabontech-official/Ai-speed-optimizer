@@ -1,0 +1,38 @@
+# fly.toml app configuration file generated for page-fold-optimize on 2025-08-28T13:01:24+05:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'page-fold-optimize'
+primary_region = 'fra'
+
+[build]
+
+[env]
+  PORT = '3000'
+  SCOPES = 'read_themes,write_themes'
+  SHOPIFY_API_KEY = '42e7052e2a04212ea5abc3e74d18ccaf'
+  SHOPIFY_APP_URL = 'https://page-fold-optimize.fly.dev'
+
+[processes]
+  app = 'node ./dbsetup.js npm run docker-start'
+
+[[mounts]]
+  source = 'data'
+  destination = '/data'
+  auto_extend_size_threshold = 80
+  auto_extend_size_increment = '1GB'
+  auto_extend_size_limit = '10GB'
+
+[http_service]
+  internal_port = 3000
+  force_https = true
+  auto_stop_machines = 'stop'
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ['app']
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1

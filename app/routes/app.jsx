@@ -15,7 +15,6 @@ export const loader = async ({ request }) => {
   const { activeSubscriptions } = subscription.data.app.installation;
 
   if (activeSubscriptions.length < 1) {
-    // billing.require may throw/redirect – let it bubble up
     await billing.require({
       plans: [MONTHLY_PLAN],
       isTest: true,
