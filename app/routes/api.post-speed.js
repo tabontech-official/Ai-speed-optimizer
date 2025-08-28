@@ -1,6 +1,6 @@
 //Api to post data  in a database after the speed is optimized
 import { json } from "@remix-run/node";
-import { sendToGoogleInsights } from "./api.insight";
+import { sendToGoogleInsights } from "../utils/api.flyinsight";
 export async function action({ request }) {
     try {
         const shopUrl = request.headers.get("X-Shopify-Shop-Domain");

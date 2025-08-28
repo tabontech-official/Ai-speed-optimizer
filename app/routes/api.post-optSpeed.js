@@ -1,6 +1,6 @@
 //Api to post data  in a database after the speed is optimized
 import { json } from "@remix-run/node";
-import { sendToGoogleInsights } from "./optimize-insight";
+import { sendToGoogleInsights } from "../utils/insight";
 
 export async function action({ request }) {
   try {
