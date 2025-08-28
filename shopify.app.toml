@@ -2,7 +2,7 @@
 
 client_id = "42e7052e2a04212ea5abc3e74d18ccaf"
 name = "AI - Page Speed Optimizer"
-application_url = "https://page-fold-optimize.fly.dev/"
+application_url = "https://basketball-contents-wu-allowed.trycloudflare.com"
 embedded = true
 handle = "ai-speed-optimizer-01"
 
@@ -26,7 +26,7 @@ api_version = "2025-07"
 scopes = "read_themes,write_themes"
 
 [auth]
-redirect_urls = ["https://page-fold-optimize.fly.dev/auth/callback"]
+redirect_urls = ["https://basketball-contents-wu-allowed.trycloudflare.com/auth/callback", "https://basketball-contents-wu-allowed.trycloudflare.com/auth/shopify/callback", "https://basketball-contents-wu-allowed.trycloudflare.com/api/auth/callback"]
 
 [pos]
 embedded = false
